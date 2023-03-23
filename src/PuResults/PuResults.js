@@ -23,16 +23,36 @@ const PuResults = () => {
   return (
     <div>
       <h1>Polling Unit Results</h1>
+      <p style={{ color: "red", fontSize: "13px" }}>
+        *Enter any polling unit Id between 8 to 27
+      </p>
       <form onSubmit={handleSubmit}>
         <label>
           Polling Unit ID:
           <input
+            style={{
+              width: "400px",
+              padding: "10px",
+              borderRadius: "12px",
+              margin: "10px 0px",
+            }}
             type="text"
             value={id}
             onChange={(e) => setId(e.target.value)}
           />
         </label>
-        <button type="submit">Submit</button>
+        <button
+          type="submit"
+          style={{
+            cursor: "pointer",
+            padding: "11px",
+            marginLeft: "5px",
+            width: "85px",
+            borderRadius: "10px",
+          }}
+        >
+          Submit
+        </button>
       </form>
       {pollingUnit && (
         <div>
