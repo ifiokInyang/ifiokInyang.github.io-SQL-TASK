@@ -10,6 +10,7 @@
 
 # production
 /build
+/.env
 
 /.github
 /yarn.lock

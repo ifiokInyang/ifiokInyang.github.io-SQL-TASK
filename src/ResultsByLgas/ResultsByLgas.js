@@ -11,7 +11,7 @@ const ResultsByLgas = () => {
   useEffect(() => {
     // setIsClicked(false)
     // get lgas from the database
-    axios.get("http://localhost:4000/polling-unit/lgas").then((response) => {
+    axios.get(`${process.env.REACT_APP_SERVER_URL}/polling-unit/lgas`).then((response) => {
       setLgas(response.data);
     });
   }, []);
@@ -32,7 +32,7 @@ const ResultsByLgas = () => {
   const handleSumTotal = () => {
     console.log("selected lga is ", selectedLga);
     axios
-      .get(`http://localhost:4000/polling-unit/total/${selectedLga}`)
+      .get(`${process.env.REACT_APP_SERVER_URL}/polling-unit/total/${selectedLga}`)
       .then((response) => {
         console.log(response.data);
         setTotalResult(response.data.totalResult);

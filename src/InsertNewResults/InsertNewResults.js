@@ -16,7 +16,7 @@ const InsertNewResults = () => {
         entered_by: name,
       };
       const response = await axios.post(
-        `http://localhost:4000/polling-unit/insert-results`,
+        `${process.env.REACT_APP_SERVER_URL}/polling-unit/insert-results`,
         formData
       );
       if (response.status === 201) {

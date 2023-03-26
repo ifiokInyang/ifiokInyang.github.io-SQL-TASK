@@ -10,7 +10,7 @@ const PuResults = () => {
     e.preventDefault();
     try {
       const { data } = await axios.get(
-        `http://localhost:4000/polling-unit/results/${id}`
+        `${process.env.REACT_APP_SERVER_URL}/polling-unit/results/${id}`
       );
       setPollingUnit(data.pollingUnit);
       console.log(data);
